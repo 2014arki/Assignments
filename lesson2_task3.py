@@ -11,7 +11,7 @@ def my_map(fn, elements, **kwargs):
      result = []
      for element in elements:
          result.append(fn(element, **kwargs))
- return result
+     return result
 
 
 
@@ -51,25 +51,28 @@ def calculate(numbers, operators):
 
 def evaluate_string(evaluate):
     operation_dictionary = {
-    "+": operator.add(),
-    "-": operator.sub()
+    "+": operator.add,
+    "-": operator.sub
     }
-    numbers = []
+    numbers_ = []
+    current_numbers_ = []
     operations = []
     for element in evaluate:
         if evaluate.isdigit():
-            numbers.append(element)
-        else:
-            <" ">.join(element)
-        if element in operation_dictionary:
-            operations.append(element)
-        else:
-            raise ValueError("Unsupported operation")
-        for element_num in numbers:
-            map(int, element_num)
-        if numbers and operations:
-            calculate(numbers, operations)
-    return acc
+            current_numbers_.append(element)
+        if not element.isdigit:
+            whole_number = "".join(current_numbers_)
+            numbers_.append(int(whole_number))
+            current_numbers_ = []
+            if element in operation_dictionary:
+                operations.append(element)
+            if element != " ":
+                raise ValueError("Unsupported operation")
+            else:
+                continue
+    if numbers_ and operations:
+        calculation_ = calculate(numbers_, operations)
+        return calculation_
 
 
 
