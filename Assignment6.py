@@ -10,23 +10,24 @@ def groups_for_graph(graph):
     :param graph:
     :return:
     """
-    graph_= {node: [neighbours]}                  # столкнулась с проблемой, что не понимаю как
-    to_visit_ = []                                # обстрактно изобразить словарь в нужном виде
+    graph_= {node: [neighbours]}                  # I discovered, that i can't represent the dictionary
+    to_visit_ = []                                # abstractedly at right way in this instance
     visited = []
     for node, neighbours in graph:
         to_visit_.append(node)
         to_visit_.append(neighbours)
         while node or neighbours in to_visit_:
             group = ((visited.append(node) or visited.append(neighbours[-1])
-                      if not node or neighbours[-1] in visited else neighbours.remove[-1]))    # вместо remove
-        else:                                                                                  #я хотела использовать
-            for reviewed_node in to_visit_, visited:                                           #pop, но это бы возвра-
-                if reviewed_node in visited:                                     #щало мне эту вершину перед удалением,
-                    to_visit_.remove(reviewed_node)                              #но я не понимаю, что я с ней должна
-        return group                                                             #была тогда делать
+                      if not node or neighbours[-1] in visited else neighbours.remove[-1]))    # I wanted to use "pop"
+        else:                                                                                  # rather than "remove".
+            for reviewed_node in to_visit_, visited:                                           # But "pop" would have
+                if reviewed_node in visited:                                     # returned the last value before
+                    to_visit_.remove(reviewed_node)                              # deleting of it. So i don't understand
+        return group                                                             # what i have to do with this value
+                                                                                 # which returned.
 
-# и да, я понимаю, что здесь нет создания новых групп связности, если они имеются, но я решила, что
-# алгоритм все равно составлен неправильно и надеялась уже после его правки как-то разобраться с
-# этим моментом
-# а насчет реализации как стека: я скорее хотела узнать, правильно ли я поняла вообще его принцип,
-# но тут и так, наверное, все непонимание уже вскрылось в самом коде, если что
+# Also i understand that i don't create the new "groups of coherence" if it's more than one.
+# I don't know how to provide this action on that code. So i decided that my algorithm is wrong any way
+# and i would to correct this problem after correcting of whole algorithm.
+# And about realization of "stack". I wanted to know how i have understood its principle: right or not.
+# But i think that if it's not - you already find it in my code.

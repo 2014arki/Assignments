@@ -93,9 +93,9 @@ def transcript_amino_acid(*nucleotide_seq):
             current_triplet.append(char)
                 if len(current_triplet) == 3 and current_triplet in dictionary_of_codes:
                         CODONS.get(value)
-# Заступорилась на этом моменте. Не понимаю как воспользоваться методом get,
-# а именно - как сделать, чтобы, найдя ключь в словаре, функция доставала
-# его значение (понимаю, что писать (value) не прокатит, а как иначе - понять не могу)
+# i don't understand how to use 'get'. As in how to get the value for a key if key in dictionary.
+# I take it wrong to use "CODONS.get(value)" in my case. How to adress to value in this individual case?
+
 
 
 
