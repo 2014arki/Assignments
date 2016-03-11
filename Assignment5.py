@@ -3,13 +3,8 @@
 from __future__ import division, print_function
 from itertools import izip
 
-def reconstruct_protein_aligment(*args):
-    """
-    :type args: str
-    :param args:
-    :return:
-    """
-dictionary_of_codes = {
+
+CODONS = {
         "TTT": "F",
         "TTC": "F",
         "TTA": "L",
@@ -76,7 +71,17 @@ dictionary_of_codes = {
         "TGA": "."
 
 }
-def transcript_amino_acid (*nucleotide_seq):
+
+
+def reconstruct_protein_aligment(*args):
+    """
+    :type args: str
+    :param args:
+    :return:
+    """
+
+
+def transcript_amino_acid(*nucleotide_seq):
     """
     :type nucleotide_seq: str
     :param nucleotide_seq:
@@ -87,6 +92,11 @@ def transcript_amino_acid (*nucleotide_seq):
         if nucleotide_seq.isalpha():
             current_triplet.append(char)
                 if len(current_triplet) == 3 and current_triplet in dictionary_of_codes:
+                        CODONS.get(value)
+# Заступорилась на этом моменте. Не понимаю как воспользоваться методом get,
+# а именно - как сделать, чтобы, найдя ключь в словаре, функция доставала
+# его значение (понимаю, что писать (value) не прокатит, а как иначе - понять не могу)
+
 
 
 
