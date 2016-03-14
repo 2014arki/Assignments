@@ -118,6 +118,7 @@ class MinHeap(object):
             if self._heap[cur_pos] >= self._heap[parent_idx]:
                 break
             self._exchange(cur_pos, parent_idx)
+            i //= 2
             cur_pos //= 2
 
     def _percolate_down(self, i):
