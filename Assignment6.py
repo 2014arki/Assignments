@@ -4,7 +4,7 @@ from __future__ import division, print_function
 
 # task 1
 
-# I try to change some parts of code and to take into account formation of connected groups
+# I try to change some parts of code and to take into account formation of the connected groups
 
 def groups_for_graph(graph):
     """
