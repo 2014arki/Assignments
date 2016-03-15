@@ -31,7 +31,8 @@ class Node(object):
         """
         Return true if Node is not equal other Node
         :type other: Node
-        :return: bool
+        :rtype: bool
+        :return:
         """
         return not self == other
 
@@ -39,7 +40,8 @@ class Node(object):
         """
         Return true if Node is equal other Node
         :type other: Node
-        :return: bool
+        :rtype: bool
+        :return:
         """
         return self.priority == other.priority
 
@@ -47,7 +49,8 @@ class Node(object):
         """
         Return true if Node is greater than other Node
         :type other: Node
-        :return: bool
+        :rtype: bool
+        :return:
         """
         return self.priority > other.priority
 
@@ -55,7 +58,8 @@ class Node(object):
         """
         Return true if Node is greater than or equal other Node
         :type other: Node
-        :return: bool
+        :rtype: bool
+        :return:
         """
         return self.priority >= other.priority
 
@@ -63,7 +67,8 @@ class Node(object):
         """
         Return true if Node is less than other Node
         :type other: Node
-        :return: bool
+        :rtype: bool
+        :return:
         """
         return self.priority < other.priority
 
@@ -71,7 +76,8 @@ class Node(object):
         """
         Return true if Node is less than or equal other Node
         :type other: Node
-        :return: bool
+        :rtype: bool
+        :return:
         """
         return self.priority <= other.priority
 
@@ -114,11 +120,10 @@ class MinHeap(object):
         """
         cur_pos = i
         while cur_pos // 2 > 0:
-            parent_idx = self._parent_idx(i)
+            parent_idx = self._parent_idx(cur_pos)
             if self._heap[cur_pos] >= self._heap[parent_idx]:
                 break
             self._exchange(cur_pos, parent_idx)
-            i //= 2
             cur_pos //= 2
 
     def _percolate_down(self, i):
